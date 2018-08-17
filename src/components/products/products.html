@@ -1,0 +1,87 @@
+<section class="products">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+
+      <fieldset class="form-group">
+        <label>Select Category:</label>
+
+        <select v-model="vSelected" @change="onSelected" class="form-control">
+          <option v-for="(item, index) in listCategory" v-bind:value="item.id">
+            {{item.categoryname}}
+          </option>
+        </select>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <input type="hidden" v-model="bookRequest.id" class="form-control">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Title:</label>
+        <input type="text" v-model="bookRequest.title" class="form-control">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Author:</label>
+        <input type="text" v-model="bookRequest.author" class="form-control">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Price:</label>
+        <input type="text" v-model="bookRequest.price" class="form-control">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Year:</label>
+        <input type="text" v-model="bookRequest.year" class="form-control">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Description:</label>
+        <textarea v-model="bookRequest.description" rows="4" class="form-control"></textarea>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <button type="submit" @click="onSave" class="btn btn-primary">Save</button>
+        <button type="submit" @click="onCancel" class="btn btn-default">Cancel</button>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <input type="hidden" v-model="bookRequest.isbn" class="form-control">
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="hidden" v-model="bookRequest.category_id" class="form-control">
+      </fieldset>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Price</th>
+            <th>Year</th>
+            <th>ISBN</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="book in listBook">
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.authors}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.isbn}}</td>
+            <td>{{book.description}}</td>
+            <td>
+              <button type="submit" @click="onEdit(book)" class="btn btn-primary">Edit</button>
+              <button type="submit" @click="onDelete(book)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

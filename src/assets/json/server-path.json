@@ -1,0 +1,8 @@
+{
+    "serverpath": "http://localhost:8081",
+    "verbs": {
+        "user": {
+            "findalluser": "/api/user/findAllUser"
+        }
+    }
+}

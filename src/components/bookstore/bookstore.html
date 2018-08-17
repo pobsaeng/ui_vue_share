@@ -1,0 +1,31 @@
+<section class="bookstore">
+  <div class="row">
+
+    <div v-for="item in listBookStore" class="col-xs-3 span8 offset2">
+      <div className="card">
+
+        <a className="img-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png" alt="..." class="img-responsive thumbnai rounded d-block">
+        </a>
+
+        <div className="card-content">
+          <h4 className="card-title">
+            {{item.title}}
+          </h4>
+          <p className="">{{item.description}}</p>
+        </div>
+
+        <div className="card-read-more">
+          <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" className="btn btn-link btn-block"></a>
+        </div>
+
+        <div class="input-group">
+          <div class="clearfix"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>

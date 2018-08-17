@@ -1,0 +1,16 @@
+<section class="dailyprocess">
+  <h1>Dailyprocess Component</h1>
+  <div>
+
+    <div v-if="imageLoading">
+      <img src="~@/assets/loader.gif" />
+    </div>
+
+    <div>
+      <input type="button" @click.prevent="getListOfData" value="Lookup" />
+    </div>
+    <div>
+      <input type="button" @click.prevent="getLogin" value="Login" />
+    </div>
+  </div>
+</section>

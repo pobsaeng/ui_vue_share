@@ -1,0 +1,18 @@
+[
+    {
+        "text": "Home",
+        "path": "/home"
+    },
+    {
+        "text": "Add Books",
+        "path": "/products"
+    },
+    {
+        "text": "POS",
+        "path": "/pos"
+    },
+    {
+        "text": "Book Store",
+        "path": "/bookstore"
+    }
+]

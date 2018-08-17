@@ -1,0 +1,44 @@
+<div class="my-login-page">
+  <section class="login h-100">
+    <div class="container h-100">
+      <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+          <!--<div class="brand">
+            <img src="img/logo.jpg">
+          </div>-->
+          <div class="card fat">
+            <div class="card-body">
+              <h4 class="card-title"></h4>
+              <form class="form-horizontal" role="form" @submit.prevent="login">
+
+                <div class="form-group">
+                  <label for="email">E-Mail Address</label>
+                  <input type="text" name="email" value="test@krungsri.com" ref="email" class="form-control" id="email" required autofocus>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password
+									</label>
+                  <input type="password" name="password" value="test1234" ref="password" class="form-control" required>
+                </div>
+
+                <div class="form-group no-margin">
+                  <button type="submit" class="btn btn-primary btn-block">
+										Login
+									</button>
+                </div>
+                <div class="margin-top20 text-center">
+                  Don't have an account? <a href="#">Create One</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="footer">
+            <p class="text-left">Username: <b>test@krungsri.com</b></p>
+            <p class="text-left">Password: <b>test1234</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

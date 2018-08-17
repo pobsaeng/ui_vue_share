@@ -1,0 +1,12 @@
+[
+    {"product_id": "1011", "product_name": "Java 8","category_id": "101", "price": "1590", "amount": "5", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "2012", "product_name": "Vue 2","category_id": "102", "price": "1390", "amount": "10", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "3013", "product_name": "angular 5","category_id": "103", "price": "1750", "amount": "6", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "4014", "product_name": "Spring Boot","category_id": "104", "price": "1490", "amount": "20", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "5015", "product_name": "PHP","category_id": "105", "price": "1690", "amount": "15", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "6016", "product_name": "Python","category_id": "106", "price": "1800", "amount": "18", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "7017", "product_name": "React","category_id": "107", "price": "1200", "amount": "25", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "7017", "product_name": "React","category_id": "107", "price": "1200", "amount": "25", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "7017", "product_name": "React","category_id": "107", "price": "1200", "amount": "25", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"},
+    {"product_id": "7017", "product_name": "React","category_id": "107", "price": "1200", "amount": "25", "status": "1", "picture": "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png"}
+]

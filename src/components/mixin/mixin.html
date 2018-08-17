@@ -1,0 +1,64 @@
+<section class="mixin">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h6>Search</h6>
+        </div>
+        <div class="card-body">
+
+          <!--Searh box-->
+          <div class="input-group col-md-6">
+            <input class="form-control py-2" type="search" @keydown="onSearchKeyDown" v-model="search">
+            <span class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+          <br/>
+          <div v-if="chkSave"><b>Parameter: </b><span style="color: red; font-weight: bold;">{{search}}</span></div>
+
+        </div>
+      </div>
+      <br/>
+      <div class="card">
+        <div class="card-header">
+          <h6>Mix In</h6>
+        </div>
+        <div class="card-body">
+
+          <form>
+            <div class="form-group">
+              <label>Id:</label>
+              <input type="text" v-model="users.id" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>First name:</label>
+              <input type="text" v-model="users.firstName" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Last name:</label>
+              <input type="text" v-model="users.lastName" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Full name:</label>
+              <input type="text" v-model="users.fullName" class="form-control">
+            </div>
+            <div class="form-group">
+              <button type="button" @click="" class="btn btn-primary">Save</button>
+            </div>
+
+          </form>
+          <div>
+            {{users}}
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>

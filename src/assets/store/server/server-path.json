@@ -1,0 +1,14 @@
+{
+    "categoryapi": {
+        "server": "http://localhost:8082",
+        "create": "/create",
+        "findallcategory": "/findAllCategory",
+        "findbycategoryid": "/findByCategoryId"
+    },
+    "productapi": {
+        "server": "http://localhost:8081",
+        "create": "/create",
+        "findallbook": "/findAllBook",
+        "findbybookid": "/findByBookId"
+    }
+}

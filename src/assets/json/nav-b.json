@@ -1,0 +1,14 @@
+[
+    {
+        "text": "Home",
+        "path": "/home"
+    },
+    {
+        "text": "System Admin",
+        "path": "/admin"
+    },
+    {
+        "text": "Customer Management",
+        "path": "/customermanagement"
+    }
+]

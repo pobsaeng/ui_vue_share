@@ -1,0 +1,44 @@
+<section class="productbox">
+  <div class="modal-mask" v-show="show" @close="close">
+    <div class="modal-container col-5">
+      <!--modal-header-->
+      <div class="modal-header" style="padding-left: 0px;">
+        <div class="input-group col-9" style="padding-left: 0px;">
+          <input class="form-control" v-on:keyup="searchProducts" placeholder="ค้นหา">
+        </div>
+        <div style="padding-top: 3px;">
+          <toggle-button id="changed-font" @change="onToggleChange" :width="80" :height="28" v-model="selectedMode"
+            :labels="{checked: 'Auto', unchecked: 'Normal'}"/>
+        </div>
+        <div class="close">
+          <i class="fa fa-window-close" style="color:red" @click="close()"></i>
+        </div>
+      </div>
+      <div class="modal-body" style="padding-left: 0px;">
+        <!--modal-body-->
+        <table class="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <th style="width: 20%">รหัส</th>
+              <th style="width: 50%">สินคา</th>
+              <th style="width: 20%">ราคา</th>
+              <th style="width: 15%">หยิบ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in listOfProduct">
+              <td>{{product.product_id}}</td>
+              <td>{{product.product_name}}</td>
+              <td>{{product.price}}</td>
+              <td class="mx-auto align-baseline"><button class="btn btn-primary" @click="save(product)"><i class="fa fa-file-powerpoint-o fa-lg" aria-hidden="true"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

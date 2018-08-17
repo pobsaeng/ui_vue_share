@@ -1,0 +1,61 @@
+<section class="profile">
+  <div>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+
+        <fieldset class="form-group">
+          <label for="first_name"></label>
+          <input type="hidden" class="form-control" v-model="book.id">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="first_name">Title</label>
+          <input type="text" class="form-control" v-model="book.title">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="first_name">Authors</label>
+          <input type="text" class="form-control" v-model="book.authors">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="first_name">Price</label>
+          <input type="text" class="form-control" v-model="book.price">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="first_name">Stock</label>
+          <input type="text" class="form-control" v-model="book.stock">
+        </fieldset>
+        <button type="submit" @click="onSave" class="btn btn-primary">Save</button>
+
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Authors</th>
+              <th>Price</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in listBook">
+              <td>{{item.id}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.authors}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.stock}}</td>
+              
+              <td><button type="submit" @click="onBind(item)" class="btn btn-primary">Bind</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</section>

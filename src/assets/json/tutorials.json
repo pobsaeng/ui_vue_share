@@ -1,0 +1,18 @@
+[
+    {
+        "text": "การสร้างโปรเจ็กต์",
+        "value": "/customer"
+    },
+    {
+        "text": "การติดตั้ง Bootstrap",
+        "value": "/mymodal"
+    },
+    {
+        "text": "การติดตั้ง package สร้าง component",
+        "value": "/about"
+    },
+    {
+        "text": "การผูก component เข้ากับ router",
+        "value": "/profile"
+    }
+]

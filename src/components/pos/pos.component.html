@@ -1,0 +1,141 @@
+<section class="pos">
+  <div>
+    <productbox :propsbox="POSProps" :show="showModalBox" @close="showModalBox=false" @increment="incrementRetrieve" @autoincrement="onAutoAdd"></productbox>
+
+    <div class="row justify-content-center">
+      <div class="d-inline-flex p-1">
+        <h3>ฟอร์มขายสินค้า</h3>
+      </div>
+    </div>
+
+    <div class="row col-10 mx-auto justify-content-center">
+      <div class="col-2" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          รหัสสินค้า
+        </div>
+      </div>
+
+      <div class="col-4" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          ชื่อสินค้า
+        </div>
+      </div>
+      <div class="col-2" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          จำนวน:
+        </div>
+      </div>
+      <div class="col-2" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          ราคา:
+        </div>
+      </div>
+      <div class="col-2" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          ราคารวม:
+        </div>
+      </div>
+    </div>
+    <div class="row col-10 mx-auto justify-content-center">
+      <div class="col-2" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          <input type="text" ref="_product_id" v-on:keyup.enter="onSearchProdID" class="form-control" v-model="POSProps.product_id">
+          <span class="input-group-btn"><button @click="onProductBox" class="btn btn-default btn-success"><i class="fa fa-product-hunt fa-lg"></i></button></span>
+        </div>
+      </div>
+
+      <div class="col-4" style="padding-right:1;padding-left:0;">
+        <div class="input-group">
+          <input type="text" disabled v-model="POSProps.product_name" class="form-control">
+        </div>
+      </div>
+      <div class="col-2" style="padding-right:1;padding-left:0;">
+        <div class="input-group">
+          <!--<input type="text" @input="onAmount" @change="onAmount" v-model="POSProps.amount" class="form-control">-->
+
+          <span class="input-group-btn btn-group">
+          <button @click="onDecrease()" type="button" class="btn btn-danger" data-action="decrement"><span class="fa fa-minus"></span></button>
+          </span>
+
+          <input type="text" ref="_amount" v-on:keyup.enter="onAmountEnter" @input="onAmount" @change="onAmount" v-model="POSProps.amount" class="form-control text-center col-md-4"
+            min="1" max="10">
+
+          <span class="input-group-btn btn-group">
+          <button @click="onIncrease()" type="button" class="btn btn-success" data-action="increment"><span class="fa fa fa-plus"></span></button>
+          </span>
+
+        </div>
+      </div>
+      <div class="col-2" style="padding-right:1;padding-left:0;">
+        <div class="input-group">
+          <input type="text" ref="_price" disabled v-model="POSProps.price" class="form-control">
+        </div>
+      </div>
+      <div class="col-2" style="padding-right:0;padding-left:0;">
+        <div class="input-group">
+          <input ref="_total" disabled type="text" style="color:#C0C0C0; background-color:black;" v-model="POSProps.total" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="row col-10 mx-auto justify-content-center">
+      <div class="col-10" style="padding-right:0;padding-left:0;">
+        <table class="table table-bordered table-sm" ref="tableRef">
+          <thead>
+            <tr>
+              <th style="width: 10%" scope="col">ลำดับ</th>
+              <th style="width: 12%" scope="col">รหัสสินค้า</th>
+              <th style="width: 50%" scope="col">สินค้า</th>
+              <th style="width: 10%" scope="col">จำวน</th>
+              <th style="width: 13%" scope="col">ยอดรวม</th>
+              <th style="width: 5%"><i class="fa fa-check-circle-o fa-1x text-success"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(product, index) in productList" :key="index">
+              <td>{{index + 1}}</td>
+              <td>{{product.product_id}}</td>
+              <td>{{product.product_name}}</td>
+              <td>{{product.amount}}</td>
+              <td>{{product.total}}</td>
+              <td ref="tdchecked">
+                <div class="checkbox radio-margin">
+                  <label>
+                    <input @click="onTdChecked($event.target, product.product_id)" type="checkbox" class="" value="">
+                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <nav aria-label="">
+            <ul class="pagination float-right">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="btn-vertical">
+          <button type="button" @click="onAddProduct" class="btn btn-success btn-lg btn-block">เพิ่มสินค้า</button>
+          <button type="button" @click="onDelete" :disabled=isDeleteDisabled class="btn btn-danger btn-lg btn-block">ลบรายการ</button>
+          <button type="button" @click="onClear" class="btn btn-warning btn-lg btn-block">เคลียร์</button>
+          <br/>
+          <button type="button" @click="onPOSSucceed" class="btn btn-primary btn-lg btn-block active">จบการขาย</button>
+          <button type="button" @click="onBeginPOS" class="btn btn-secondary btn-lg btn-block active">เริ่มขายใหม่</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
